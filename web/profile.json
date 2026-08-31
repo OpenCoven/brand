@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": "opencoven.brand-web-profile/v1",
+  "profileVersion": "1.0.0",
+  "status": "stable",
+  "releasedAt": "2026-08-30",
+  "canonicalAsset": {
+    "mark": "web/assets/mark.svg",
+    "viewBox": "0 0 212 212",
+    "minimumDigitalSizePx": 16,
+    "recommendedHeaderSizePx": 28,
+    "clearSpace": "one central-aperture width on every side",
+    "wordmark": "Set OpenCoven as live text in the display role; do not outline or distort the name.",
+    "lockup": "Mark, then wordmark, separated by one spacing-2 unit. Keep the mark optically centered.",
+    "favicon": "Use the mark alone on a single high-contrast field.",
+    "og": "Use the mark, one concise message, and generous negative space; alt text must describe the message, not decorative geometry."
+  },
+  "themes": {
+    "light": {
+      "oc-bg": "#FCFAFE", "oc-surface-1": "#FFFFFF", "oc-surface-2": "#F6F0FA", "oc-surface-3": "#ECE3F2",
+      "oc-text": "#1A1320", "oc-text-muted": "#5D5265", "oc-text-subtle": "#74667E",
+      "oc-border": "#D8CCE0", "oc-border-strong": "#B9A8C4",
+      "oc-action": "#7A22EE", "oc-action-hover": "#6410CC", "oc-on-action": "#FFFFFF", "oc-focus": "#6E19DA",
+      "oc-presence": "#5E2A8A", "oc-on-presence": "#FFFFFF",
+      "oc-success-bg": "#E7F6EC", "oc-success-text": "#17683A",
+      "oc-pending-bg": "#FFF4D3", "oc-pending-text": "#704B00",
+      "oc-blocked-bg": "#FDEBEC", "oc-blocked-text": "#8A1C1C",
+      "oc-evidence-bg": "#F2EDF5", "oc-evidence-text": "#4A3F51"
+    },
+    "dark": {
+      "oc-bg": "#050409", "oc-surface-1": "#0F0D14", "oc-surface-2": "#17131E", "oc-surface-3": "#211A2B",
+      "oc-text": "#F7F3FA", "oc-text-muted": "#CBBFD3", "oc-text-subtle": "#A998B5",
+      "oc-border": "#3B3146", "oc-border-strong": "#5B4B69",
+      "oc-action": "#8E3DFF", "oc-action-hover": "#7A22EE", "oc-on-action": "#FFFFFF", "oc-focus": "#C9A7FF",
+      "oc-presence": "#B991FF", "oc-on-presence": "#050409",
+      "oc-success-bg": "#11281B", "oc-success-text": "#93E6B4",
+      "oc-pending-bg": "#2B210D", "oc-pending-text": "#FFD27A",
+      "oc-blocked-bg": "#321517", "oc-blocked-text": "#FFB4AC",
+      "oc-evidence-bg": "#201A25", "oc-evidence-text": "#E8E0F0"
+    }
+  },
+  "contrastPairs": [
+    {"theme":"light","foreground":"oc-text","background":"oc-bg","minimum":7},
+    {"theme":"light","foreground":"oc-text-muted","background":"oc-bg","minimum":4.5},
+    {"theme":"light","foreground":"oc-text-subtle","background":"oc-bg","minimum":4.5},
+    {"theme":"light","foreground":"oc-on-action","background":"oc-action","minimum":4.5},
+    {"theme":"light","foreground":"oc-on-action","background":"oc-action-hover","minimum":4.5},
+    {"theme":"light","foreground":"oc-on-presence","background":"oc-presence","minimum":4.5},
+    {"theme":"light","foreground":"oc-success-text","background":"oc-success-bg","minimum":4.5},
+    {"theme":"light","foreground":"oc-pending-text","background":"oc-pending-bg","minimum":4.5},
+    {"theme":"light","foreground":"oc-blocked-text","background":"oc-blocked-bg","minimum":4.5},
+    {"theme":"light","foreground":"oc-evidence-text","background":"oc-evidence-bg","minimum":4.5},
+    {"theme":"dark","foreground":"oc-text","background":"oc-bg","minimum":7},
+    {"theme":"dark","foreground":"oc-text-muted","background":"oc-bg","minimum":4.5},
+    {"theme":"dark","foreground":"oc-text-subtle","background":"oc-bg","minimum":4.5},
+    {"theme":"dark","foreground":"oc-on-action","background":"oc-action","minimum":4.5},
+    {"theme":"dark","foreground":"oc-on-action","background":"oc-action-hover","minimum":4.5},
+    {"theme":"dark","foreground":"oc-on-presence","background":"oc-presence","minimum":4.5},
+    {"theme":"dark","foreground":"oc-success-text","background":"oc-success-bg","minimum":4.5},
+    {"theme":"dark","foreground":"oc-pending-text","background":"oc-pending-bg","minimum":4.5},
+    {"theme":"dark","foreground":"oc-blocked-text","background":"oc-blocked-bg","minimum":4.5},
+    {"theme":"dark","foreground":"oc-evidence-text","background":"oc-evidence-bg","minimum":4.5}
+  ],
+  "typography": {
+    "display": "Geist, Inter, SF Pro Display, system-ui, sans-serif",
+    "reading": "Inter, SF Pro Text, system-ui, sans-serif",
+    "mono": "SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, monospace",
+    "readingMeasureCh": 68, "technicalMeasureCh": 80
+  },
+  "radiusPx": [4,8,12,16],
+  "spacingPx": [4,8,12,16,24,32,48,64,96],
+  "density": {
+    "narrative": "48–96 px vertical bands with a 60–68 ch reading measure",
+    "evidence": "16–24 px internal spacing with aligned labels and values",
+    "action": "8–16 px gaps; one filled action per decision surface"
+  },
+  "motion": {
+    "fastMs": 120, "standardMs": 180, "slowMs": 320,
+    "reducedMotion": "Remove translation, scale, parallax, autoplay, and decorative looping while preserving state changes immediately."
+  },
+  "statusSemantics": {
+    "presence": "A live/connected embodiment; violet plus a text label or shape.",
+    "action": "A user-invoked operation; never reuse presence color as the only cue.",
+    "verified": "Evidence-backed success; green treatment plus check/text.",
+    "pending": "Waiting, reconciling, or stale; amber treatment plus clock/text.",
+    "blocked": "Rejected, failed, or unavailable; red treatment plus icon/text.",
+    "evidence": "Neutral receipt, provenance, or unknown state; neutral surface plus explicit wording."
+  },
+  "imagery": {
+    "illustration": "Prefer geometric, architectural, or editorial diagrams over fake product screenshots.",
+    "screenshots": "Use current product captures with source revision, date, and descriptive alt text.",
+    "threeD": "Optional progressive enhancement only. Never render-critical; pauseable; no information may depend on motion or WebGL.",
+    "mark": "Flat monochrome only. Do not add gradients, glow, smoke, sparkles, or retired hood/trident geometry."
+  },
+  "voice": {
+    "principle": "Clear, technically grounded, emotionally resonant, never fake-mystical.",
+    "rule": "Familiar and magical language must immediately clarify architecture, authority, evidence, or behavior.",
+    "avoid": ["Unqualified sentience or personhood claims","Legal ownership language for familiars","Continuity claims beyond implemented evidence","Decorative occult language that obscures the mechanism"]
+  }
+}

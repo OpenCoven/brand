@@ -1,0 +1,17 @@
+{
+  "name": "@opencoven/brand",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Canonical OpenCoven visual identity and framework-neutral web surface profile.",
+  "type": "module",
+  "files": ["web", "logo", "social", "docs/WEB-SURFACE-PROFILE.md", "docs/BRAND-USAGE.md", "CHANGELOG.md"],
+  "exports": {
+    "./web/profile.css": "./web/profile.css",
+    "./web/profile.json": "./web/profile.json",
+    "./web/specimen.css": "./web/specimen.css",
+    "./web/specimen.html": "./web/specimen.html",
+    "./web/assets/mark.svg": "./web/assets/mark.svg"
+  },
+  "scripts": { "check": "node scripts/validate-web-profile.mjs" },
+  "engines": { "node": ">=20" }
+}
