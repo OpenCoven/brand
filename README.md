@@ -4,68 +4,57 @@ The official source of truth for OpenCoven's visual identity, voice, and brand s
 
 > If it carries the Coven's name, it should look, sound, and feel like it belongs here.
 
----
+## Canonical web profile
 
-## What's in this repo
+Public web surfaces consume the versioned, framework-neutral profile rather than recreating a private token era:
 
-| Folder | What it holds |
-|--------|---------------|
-| [`DESIGN.md`](./DESIGN.md) | Canonical design direction: Arcane Field Manual — palette, type, surfaces, motion, voice. |
-| [`logo/`](./logo) | Wordmarks, marks, and monoline variants in SVG. |
-| [`icons/`](./icons) | System icons (gateway, agents, tools, workflow). |
-| [`social/`](./social) | Banners, avatars, OG images for X, GitHub, Discord, etc. |
-| [`ui/`](./ui) | Design tokens — `color-tokens.css`, `typography.css`. |
-| [`docs/`](./docs) | Usage guidance — how to apply the brand in the wild. |
+- [`web/profile.css`](./web/profile.css) — light/dark/system semantic tokens, type, spacing, radius, motion, and forced-colors behavior;
+- [`web/profile.json`](./web/profile.json) — machine-readable version, asset, state, contrast, imagery, and voice contract;
+- [`web/assets/mark.svg`](./web/assets/mark.svg) — current flat monochrome crown/lotus mark;
+- [`web/specimen.html`](./web/specimen.html) — responsive identity specimens;
+- [`docs/WEB-SURFACE-PROFILE.md`](./docs/WEB-SURFACE-PROFILE.md) — normative usage guidance;
+- [`docs/migration/landing-vnext.md`](./docs/migration/landing-vnext.md) — consumer migration notes.
 
----
+Validate the export with Node 20+:
 
-## Quick reference
+```bash
+npm run check
+```
 
-**Palette (core):**
-- Ink Black `#050409`
-- Charcoal Glass `#111018`
-- Smoky Panel `#191622`
-- Deep Plum `#3B164F`
-- **Coven Violet `#8E3DFF`** ← brand anchor
-- Ritual Purple `#A855F7`
-- Orchid Glow `#D26BFF`
-- Amethyst Mist `#C9A7FF`
-- Manual Paper `#E8E0F0`
+The package/profile version is `1.0.0`. Consumers must pin an immutable commit or release and run a byte/semantic canary before updating.
 
-**Avoid as brand color:** periwinkle, indigo, electric blue-violet, any blue glow. Blue is reserved for explicit actionable/system states.
+## Repository map
 
-**Typography:** see [`ui/typography.css`](./ui/typography.css).
+| Path | Ownership |
+|---|---|
+| [`DESIGN.md`](./DESIGN.md) | Broad canonical design direction and historical rationale |
+| [`web/`](./web) | Stable public-web identity export |
+| [`logo/`](./logo) | Historical and current source assets; use the manifest's canonical path for new work |
+| [`icons/`](./icons) | System icon source files |
+| [`social/`](./social) | Banners, avatars, and OG assets |
+| [`docs/`](./docs) | Usage, migration, and voice guidance |
+| [`ui/`](./ui) | Deprecated compatibility entrypoints forwarding to the web profile |
 
-**Voice:** clear, technically grounded, emotionally resonant, never fake-mystical. The magic framing should clarify the architecture, not obscure it.
+## Current identity rules
 
-For the full direction, read [`DESIGN.md`](./DESIGN.md).
+- Canonical mark: flat, symmetric crown/lotus, monochrome, legible at favicon size.
+- Brand anchor: Coven Violet `#8E3DFF`; accessible action variants are exported per theme.
+- No retired hood/crescent/trident geometry, gradients, glow, smoke, sparkles, or fake depth on the mark.
+- Typography: display, reading, and mono roles exported by the profile; no commercial font may be bundled without a license.
+- Voice: clear, technically grounded, emotionally resonant, never fake-mystical. Familiar language clarifies architecture rather than obscuring it.
 
----
-
-## Using this repo
-
-- **Need a logo or asset?** Pull from this repo, not from screenshots or older Coven repos.
-- **Building a Coven surface (docs site, app, social)?** Wire in `ui/color-tokens.css` and follow `DESIGN.md`.
-- **Writing for OpenCoven?** Check `docs/BRAND-USAGE.md` before publishing.
-
----
+Visual identity belongs here. Framework-neutral interaction semantics belong to `OpenCoven/ui`; production component behavior belongs to product repositories.
 
 ## Contributing
 
-Brand evolution happens deliberately. If you want to propose a change:
+Brand evolution is deliberate:
 
-1. Open an issue describing the change and why.
-2. For visual changes, include before/after.
-3. Brand decisions are reviewed by Val and the brand familiars before landing.
-
-Small fixes (typos, broken asset links, missing alt text) — open a PR directly.
-
----
+1. Open an issue explaining the change and downstream impact.
+2. Include before/after evidence for visual changes.
+3. Update `profileVersion` and `CHANGELOG.md` according to the versioning policy.
+4. Run `npm run check`.
+5. Obtain brand-owner review before changing the canonical mark, voice, or semantic roles.
 
 ## License
 
-Brand assets (logos, marks, icons, banners) are **© OpenCoven** and may only be used in accordance with `docs/BRAND-USAGE.md`. Tokens, type scales, and documentation are released under the same terms as the rest of the OpenCoven ecosystem unless noted otherwise.
-
----
-
-Maintained by the Coven ✦
+Brand assets (logos, marks, icons, banners) are **© OpenCoven** and may only be used in accordance with [`docs/BRAND-USAGE.md`](./docs/BRAND-USAGE.md). Tokens, type scales, and documentation follow the terms stated by the OpenCoven ecosystem unless noted otherwise.
