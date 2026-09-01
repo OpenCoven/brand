@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Clarified that `web/profile.json`, `web/profile.css`, and `web/assets/mark.svg` are the single canonical public-web profile authority.
+- Added fail-closed validation against parallel stable/canonical manifests and reserved `web/tokens.*` aliases.
+
 ## 1.0.0 — 2026-08-30
 
 - Ratified the canonical flat crown/lotus mark for public web surfaces.
