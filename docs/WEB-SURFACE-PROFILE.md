@@ -7,6 +7,14 @@
 
 This profile turns OpenCoven's identity and voice into a versioned, framework-neutral contract. It is visual identity—not production component behavior. Interaction semantics remain owned by `OpenCoven/ui`; product behavior remains owned by the corresponding product repository.
 
+## Single-authority invariant
+
+Exactly one canonical public-web profile exists in this repository. Its normative manifest, token export, and mark are `web/profile.json`, `web/profile.css`, and `web/assets/mark.svg`.
+
+A proposal may amend those artifacts through the versioning policy below, but it must not introduce a second stable or canonical manifest, parallel token authority, or competing `1.0.0` profile. In particular, `web/tokens.css` and `web/tokens.json` are reserved as invalid parallel-authority aliases rather than alternate entry points. Consumers must use the package exports and immutable revision of the canonical `web/profile.*` artifacts.
+
+Repository validation scans the web root and fails closed if another manifest claims stable/canonical web-profile authority or if a reserved parallel token alias appears. A new major profile still replaces the existing authority through reviewed migration notes; it does not coexist as a second canonical source.
+
 ## Canonical identity
 
 The canonical mark is the flat, symmetric crown/lotus form at `web/assets/mark.svg`. It uses `currentColor` so a consumer can render one monochrome mark against a high-contrast field.
